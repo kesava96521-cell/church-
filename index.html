@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#1a0a00">
-  <title>Ravali Church</title>
+  <title>Ravali</title>
   <style>
     * {
       margin: 0;
@@ -61,511 +61,129 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: rgba(0, 0, 0, 0.45);
+      background: rgba(0, 0, 0, 0.35);
       padding: 20px;
     }
 
     .title {
-      font-size: 1.8rem;
-      font-weight: 700;
+      font-size: 1.5rem;
+      font-weight: 600;
       text-align: center;
-      margin-bottom: 8px;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+      margin-bottom: 24px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.9);
       color: #fff;
-    }
-
-    .subtitle {
-      font-size: 1.1rem;
-      text-align: center;
-      margin-bottom: 30px;
-      opacity: 0.9;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.7);
-    }
-
-    .church-name {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: #ffd700;
-      text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
-      margin-bottom: 20px;
-      letter-spacing: 2px;
     }
 
     .input-group {
       width: 100%;
-      max-width: 320px;
-      margin-bottom: 16px;
+      max-width: 300px;
+      margin-bottom: 14px;
     }
 
     input {
       width: 100%;
-      padding: 14px 18px;
-      border: none;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
+      padding: 15px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       color: #fff;
       font-size: 1rem;
       outline: none;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      transition: all 0.3s;
+      transition: all 0.25s;
     }
 
     input::placeholder {
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.65);
     }
 
     input:focus {
-      background: rgba(255, 255, 255, 0.25);
-      border-color: #ffd700;
-      box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.6);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
     }
 
     .btn {
       width: 100%;
-      max-width: 320px;
+      max-width: 300px;
       padding: 14px;
       border: none;
-      border-radius: 12px;
+      border-radius: 14px;
       font-size: 1.05rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.25s;
-      margin-top: 8px;
+      margin-top: 6px;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #c9a227, #ffd700);
-      color: #1a0a00;
+      background: rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.4);
     }
 
     .btn-primary:active {
       transform: scale(0.97);
-      opacity: 0.9;
+      background: rgba(255, 255, 255, 0.32);
     }
 
     .btn-secondary {
       background: transparent;
-      color: #ffd700;
-      border: 1.5px solid #ffd700;
-      margin-top: 12px;
+      color: rgba(255, 255, 255, 0.9);
+      border: 1.5px solid rgba(255, 255, 255, 0.45);
+      margin-top: 14px;
     }
 
     .btn-secondary:active {
-      background: rgba(255, 215, 0, 0.15);
+      background: rgba(255, 255, 255, 0.12);
     }
 
     .error-msg {
-      color: #ff6b6b;
+      color: #ff8a80;
       font-size: 0.9rem;
-      margin-top: 10px;
+      margin-top: 12px;
       text-align: center;
       min-height: 20px;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.8);
     }
 
-    .success-msg {
-      color: #69f0ae;
-      font-size: 0.95rem;
-      margin-top: 10px;
-      text-align: center;
-    }
-
-    /* Welcome animation */
-    .welcome-text {
-      font-size: 2.4rem;
-      font-weight: 700;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1.2s ease forwards 0.3s;
-      text-shadow: 0 4px 20px rgba(0,0,0,0.7);
-    }
-
-    .welcome-sub {
-      font-size: 1.3rem;
-      margin-top: 12px;
-      opacity: 0;
-      animation: fadeInUp 1s ease forwards 0.8s;
-      color: #ffd700;
-    }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Home page */
-    .home-content {
-      z-index: 2;
-      text-align: center;
-      padding: 30px 20px;
-      max-width: 400px;
-    }
-
-    .home-title {
-      font-size: 2rem;
-      color: #ffd700;
-      margin-bottom: 10px;
-    }
-
-    .home-user {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-      opacity: 0.9;
-    }
-
-    .home-card {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(12px);
-      border-radius: 16px;
-      padding: 24px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-    }
-
-    .logout-btn {
-      margin-top: 30px;
-      background: rgba(255, 80, 80, 0.2);
-      color: #ff8a80;
-      border: 1px solid rgba(255, 80, 80, 0.4);
-      max-width: 200px;
-    }
-
-    /* Loading spinner */
-    .spinner {
-      width: 40px;
-      height: 40px;
-      border: 3px solid rgba(255,255,255,0.2);
-      border-top-color: #ffd700;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-      margin-bottom: 16px;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    .tap-to-start {
-      position: absolute;
-      z-index: 10;
-      bottom: 60px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(0,0,0,0.6);
-      padding: 12px 28px;
+    /* Start button */
+    .start-btn {
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: #fff;
+      padding: 14px 40px;
       border-radius: 30px;
-      font-size: 1rem;
-      border: 1px solid rgba(255,255,255,0.3);
+      font-size: 1.1rem;
+      font-weight: 600;
       cursor: pointer;
     }
 
-    /* Form toggle */
-    .form-container {
+    .start-btn:active {
+      transform: scale(0.97);
+    }
+
+    /* Home + bottom nav */
+    .home-wrapper {
       width: 100%;
-      max-width: 320px;
-      transition: all 0.3s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 2;
     }
 
-    .hidden {
-      display: none !important;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- SCREEN 1: Intro Video -->
-  <div id="screen1" class="screen active">
-    <video id="video1" playsinline webkit-playsinline>
-      <source src="https://raw.githubusercontent.com/kesava96521-cell/Vedio--jagadeesh-/main/InShot_20260807_193138609.mp4" type="video/mp4">
-    </video>
-    <div id="startOverlay" class="overlay" style="background: rgba(0,0,0,0.7);">
-      <div class="church-name">RAVALI</div>
-      <div class="subtitle">Church of God</div>
-      <button class="btn btn-primary" style="max-width: 220px;" onclick="startApp()">Enter Church</button>
-    </div>
-  </div>
-
-  <!-- SCREEN 2: Password Unlock -->
-  <div id="screen2" class="screen">
-    <img class="bg-image" src="https://raw.githubusercontent.com/kesava96521-cell/Vedio--jagadeesh-/main/IMG_20260808_063616.jpg" alt="Church Door">
-    <div class="overlay">
-      <div class="church-name">RAVALI</div>
-      <div class="title">Enter password to unlock</div>
-      <div class="subtitle">the door</div>
-      <div class="input-group">
-        <input type="password" id="doorPassword" placeholder="Password" autocomplete="off">
-      </div>
-      <button class="btn btn-primary" onclick="checkDoorPassword()">Unlock Door</button>
-      <div id="doorError" class="error-msg"></div>
-    </div>
-  </div>
-
-  <!-- SCREEN 3: Door Opening Video -->
-  <div id="screen3" class="screen">
-    <video id="video2" playsinline webkit-playsinline>
-      <source src="https://raw.githubusercontent.com/kesava96521-cell/Vedio--jagadeesh-/main/Wooden_church_door_opens_202608071924.mp4" type="video/mp4">
-    </video>
-    <div id="welcomeOverlay" class="overlay" style="display:none; background: rgba(0,0,0,0.55);">
-      <div class="welcome-text">Welcome my child</div>
-      <div class="welcome-sub">Ravali Church</div>
-    </div>
-  </div>
-
-  <!-- SCREEN 4: Login / Register -->
-  <div id="screen4" class="screen">
-    <img class="bg-image" src="https://raw.githubusercontent.com/kesava96521-cell/Vedio--jagadeesh-/main/IMG_20260808_063533.jpg" alt="Login Background">
-    <div class="overlay">
-      <div class="church-name">RAVALI</div>
-      
-      <!-- Login Form -->
-      <div id="loginForm" class="form-container">
-        <div class="title">Enter your name and password</div>
-        <div class="input-group" style="margin-top: 20px;">
-          <input type="text" id="loginName" placeholder="Name" autocomplete="username">
-        </div>
-        <div class="input-group">
-          <input type="password" id="loginPassword" placeholder="Password" autocomplete="current-password">
-        </div>
-        <button class="btn btn-primary" onclick="doLogin()">Login</button>
-        <button class="btn btn-secondary" onclick="showRegister()">Create account now</button>
-        <div id="loginError" class="error-msg"></div>
-      </div>
-
-      <!-- Register Form -->
-      <div id="registerForm" class="form-container hidden">
-        <div class="title">Create Account</div>
-        <div class="input-group" style="margin-top: 20px;">
-          <input type="text" id="regName" placeholder="Name" autocomplete="username">
-        </div>
-        <div class="input-group">
-          <input type="password" id="regPassword" placeholder="Password" autocomplete="new-password">
-        </div>
-        <div class="input-group">
-          <input type="password" id="regConfirm" placeholder="Confirm Password" autocomplete="new-password">
-        </div>
-        <button class="btn btn-primary" onclick="doRegister()">Create Account</button>
-        <button class="btn btn-secondary" onclick="showLogin()">Back to Login</button>
-        <div id="regError" class="error-msg"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SCREEN 5: Home -->
-  <div id="screen5" class="screen">
-    <div style="position:absolute; inset:0; background: linear-gradient(160deg, #1a0a00 0%, #3d1c00 40%, #1a0a00 100%); z-index:1;"></div>
-    <div class="home-content">
-      <div class="home-title">✝ Ravali Church</div>
-      <div class="home-user" id="homeUserName">Welcome</div>
-      <div class="home-card">
-        <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 16px;">
-          You have entered the house of the Lord.
-        </p>
-        <p style="opacity: 0.85; font-size: 0.95rem;">
-          "Come to me, all you who are weary and burdened, and I will give you rest."
-        </p>
-        <p style="margin-top: 12px; font-size: 0.9rem; opacity: 0.7;">— Matthew 11:28</p>
-      </div>
-      <button class="btn logout-btn" onclick="logout()">Logout</button>
-    </div>
-  </div>
-
-  <script>
-    // ============ CONFIG ============
-    const DOOR_PASSWORD = "jesus";
-    const STORAGE_KEY = "ravali_users";
-
-    // ============ HELPERS ============
-    function showScreen(id) {
-      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
-
-    function getUsers() {
-      try {
-        return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
-      } catch {
-        return {};
-      }
-    }
-
-    function saveUsers(users) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(users));
-    }
-
-    // ============ SCREEN 1: Start ============
-    function startApp() {
-      document.getElementById('startOverlay').style.display = 'none';
-      const v1 = document.getElementById('video1');
-      v1.muted = false;
-      v1.play().catch(() => {
-        // fallback if autoplay blocked
-        v1.muted = true;
-        v1.play();
-      });
-
-      v1.onended = () => {
-        showScreen('screen2');
-        document.getElementById('doorPassword').focus();
-      };
-    }
-
-    // ============ SCREEN 2: Door Password ============
-    function checkDoorPassword() {
-      const input = document.getElementById('doorPassword').value.trim().toLowerCase();
-      const err = document.getElementById('doorError');
-
-      if (input === DOOR_PASSWORD) {
-        err.textContent = '';
-        showScreen('screen3');
-        playDoorVideo();
-      } else {
-        err.textContent = 'Wrong password. Try again.';
-        document.getElementById('doorPassword').value = '';
-        document.getElementById('doorPassword').focus();
-      }
-    }
-
-    // Enter key support
-    document.getElementById('doorPassword').addEventListener('keypress', e => {
-      if (e.key === 'Enter') checkDoorPassword();
-    });
-
-    // ============ SCREEN 3: Door Video + Welcome ============
-    function playDoorVideo() {
-      const v2 = document.getElementById('video2');
-      const welcome = document.getElementById('welcomeOverlay');
-
-      v2.muted = false;
-      v2.play().catch(() => {
-        v2.muted = true;
-        v2.play();
-      });
-
-      // Show welcome text after 1.5s
-      setTimeout(() => {
-        welcome.style.display = 'flex';
-      }, 1500);
-
-      v2.onended = () => {
-        // small delay then go to login
-        setTimeout(() => {
-          showScreen('screen4');
-          document.getElementById('loginName').focus();
-        }, 800);
-      };
-    }
-
-    // ============ SCREEN 4: Login / Register ============
-    function showRegister() {
-      document.getElementById('loginForm').classList.add('hidden');
-      document.getElementById('registerForm').classList.remove('hidden');
-      document.getElementById('regName').focus();
-      document.getElementById('regError').textContent = '';
-    }
-
-    function showLogin() {
-      document.getElementById('registerForm').classList.add('hidden');
-      document.getElementById('loginForm').classList.remove('hidden');
-      document.getElementById('loginName').focus();
-      document.getElementById('loginError').textContent = '';
-    }
-
-    function doRegister() {
-      const name = document.getElementById('regName').value.trim();
-      const pass = document.getElementById('regPassword').value;
-      const confirm = document.getElementById('regConfirm').value;
-      const err = document.getElementById('regError');
-
-      if (!name || !pass || !confirm) {
-        err.textContent = 'Please fill all fields';
-        return;
-      }
-      if (pass.length < 4) {
-        err.textContent = 'Password must be at least 4 characters';
-        return;
-      }
-      if (pass !== confirm) {
-        err.textContent = 'Passwords do not match';
-        return;
-      }
-
-      const users = getUsers();
-      const key = name.toLowerCase();
-      if (users[key]) {
-        err.textContent = 'Name already exists. Try different name.';
-        return;
-      }
-
-      users[key] = { name: name, password: pass };
-      saveUsers(users);
-
-      // auto login after register
-      localStorage.setItem('ravali_current_user', name);
-      goToHome(name);
-    }
-
-    function doLogin() {
-      const name = document.getElementById('loginName').value.trim();
-      const pass = document.getElementById('loginPassword').value;
-      const err = document.getElementById('loginError');
-
-      if (!name || !pass) {
-        err.textContent = 'Please enter name and password';
-        return;
-      }
-
-      const users = getUsers();
-      const user = users[name.toLowerCase()];
-
-      if (!user || user.password !== pass) {
-        err.textContent = 'Invalid name or password';
-        return;
-      }
-
-      localStorage.setItem('ravali_current_user', user.name);
-      goToHome(user.name);
-    }
-
-    // Enter key for login
-    document.getElementById('loginPassword').addEventListener('keypress', e => {
-      if (e.key === 'Enter') doLogin();
-    });
-    document.getElementById('regConfirm').addEventListener('keypress', e => {
-      if (e.key === 'Enter') doRegister();
-    });
-
-    // ============ SCREEN 5: Home ============
-    function goToHome(name) {
-      document.getElementById('homeUserName').textContent = `Welcome, ${name}`;
-      showScreen('screen5');
-    }
-
-    function logout() {
-      localStorage.removeItem('ravali_current_user');
-      // reset forms
-      document.getElementById('loginName').value = '';
-      document.getElementById('loginPassword').value = '';
-      document.getElementById('regName').value = '';
-      document.getElementById('regPassword').value = '';
-      document.getElementById('regConfirm').value = '';
-      showLogin();
-      showScreen('screen4');
-    }
-
-    // Check if already logged in (optional)
-    window.addEventListener('DOMContentLoaded', () => {
-      // Always start from beginning for the experience
-      // If you want skip to home when logged in, uncomment below:
-      /*
-      const current = localStorage.getItem('ravali_current_user');
-      if (current) {
-        goToHome(current);
-      }
-      */
-    });
-  </script>
-</body>
-</html>
+    .home-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      padding-bottom: 90px;
+      text-align: 
+... 
